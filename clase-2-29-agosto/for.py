@@ -10,4 +10,6 @@ print(list(rango))
 for i in range(5):
     print(i)
 
-
+lista = ["Azul", "Amarillo", "Rojo"]
+for color in lista:
+    print(color)
