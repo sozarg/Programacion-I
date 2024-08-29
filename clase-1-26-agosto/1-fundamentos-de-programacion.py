@@ -25,16 +25,16 @@
 # Porcentaje de empleados que no votaron por IA, siempre y cuando su género no sea Femenino o su edad se encuentre entre los 33 y 40.
 # Nombre y tecnología que votó, de los empleados de género masculino con mayor edad de ese género.
 
-seguir = True
+tope = 0
+i = True
 
 # A)
 
-while seguir == True:
-    edad_empleado = prompt("X", "Ingrese el nombre del empleado")
-    if not nombre_empleado:
-        break
-    edad_empleado = prompt("X", "Ingrese la edad del empleado")
-    edad_empleado = int(edad_empleado)
+while tope < 10 and i == True:
+    tope +=1
+    nombre_empleado = input("Ingrese el nombre del empleado")
+    edad_empleado = int(input("Ingrese la edad del empleado"))
     while edad_empleado < 18:
-        edad_empleado = prompt("X", "ERROR,Ingrese la edad del empleado")
-        edad_empleado =int(edad_empleado)
+        edad_empleado = int(input("ERROR,Ingrese la edad del empleado"))
+    genero_empleado = input("Ingrese el genero del empleado (Masculino - Femenino - Otro)")
+        while genero_empleado != "Masculino" and genero_empleado != "Femenino" and genero_empleado != "Otro"
