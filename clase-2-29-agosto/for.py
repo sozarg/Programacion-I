@@ -42,3 +42,7 @@
 
 #     print(numero)
 
+for i in range(5):
+    print(f"i: {i}")
+    for j in range(10):
+        print(f"\tj: {j}")
