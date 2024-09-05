@@ -1,10 +1,7 @@
-def mostrar():
-    global numero
-    print(numero)
-    numero = 77
-    print(numero)
+from modulo import *
     
-    ###MAIN###
-    numero=4
-    mostrar()
-    print(numero)
+###MAIN###
+numero = 4
+mostrar(numero)
+saludar(numero)
+sumar()
