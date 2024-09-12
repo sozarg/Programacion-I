@@ -1,5 +1,5 @@
-def cuenta_regreisva(numero:int)->None:
+def cuenta_regresiva(numero:int)->None:
     for i in range(numero, -1, -1):
         print(i)
         
-cuenta_regreisva(10)
+cuenta_regresiva(10)
