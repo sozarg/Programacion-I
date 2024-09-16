@@ -13,6 +13,12 @@ def acumular_valores(mi_lista: list)-> int:
     for i in range(len(mi_lista)):
         acumulador += mi_lista[i]
         return acumulador
+def contar_pares(mi_lista: list) ->int:
+    contador = 0
+    for i in range(len(mi_lista)):
+        if mi_lista[i] % 2 == 0:
+            contador +=1
+    return contador
 ####MAIN##
 lista = [5, 9, 4, 11, 9]
 otra = [3,8]
@@ -25,17 +31,6 @@ suma2 = acumular_valores(otra)
 total = suma + suma2
 print(f"La suma es: {total}")
 
+cantidad_pares = contar_pares(otra)
+print(f"hay {cantidad_pares} numeros pares")
 
-
-# acumulador = 0
-# for i in range(len(lista)):
-#     acumulador += lista[i]
-    
-# print(f"La suma es: {acumulador}")
-
-# contador = 0
-# for i in range(len(lista)):
-#     if lista[i] % 2 == 0:
-#         contador +=1
-
-# print(f"Hay {contador} numeros pares")
