@@ -1,3 +1,4 @@
+from os import system
 bandera = True
 while bandera == True:
     opcion = input("1. Sumar\n2. Restar\n3. Multiplicar\n4. Dividir\n5. Salir\nElija una opcion: ")
@@ -13,3 +14,8 @@ while bandera == True:
         case "5":
             print("gracias por usar mi super calculadora")
             bandera = False
+        case _:
+            print("No elegiste opcion valida!!")
+            
+    system("pause")
+    system("cls")
