@@ -14,16 +14,44 @@ def validacion_legajo(legajo, matriz_legajos_choferes):
             return True
     return False
 
-def cargar_planilla():
-    linea = int(input("Chofer, ingrese el numero de linea"))
-    
 def validacion_linea():
     while True:
         linea = int(input("Chofer, ingrese el numero de linea: "))
-        if linea < 1 or linea > 3:
+        if linea >= 1 and linea <= 3:
             return linea
         else:
             print("Chofer, la linea debe ser del 1 al 3")
+def validacion_coche():
+    while True:
+        coche = int(input("Chofer, ingrese el numero de coche: "))
+        if coche >= 1 and coche <= 5:
+            return coche
+        else:
+            print("Chofer, solo existen 5 coches")
+
+def validacion_recaudo():
+    while True:
+        recaudo = int(input("Chofer, ingrese el numero de recaudo: "))
+        if recaudo >= 0:
+            return recaudo
+        else:
+            print("Chofer, debe ingresar un recaudo real")
+
+def cargar_planilla():
+    legajo = ingresar_legajo()
+    if not validacion_legajo(legajo, matriz_legajos_choferes):
+        print("Chofer, su legajo no es valido")
+        return
+    while True:
+        linea = validacion_linea()
+        coche = validacion_coche()
+        recaudo = validacion_recaudo()
+        
+        print(f"Recaudación registrada: Línea {linea}, Coche {coche}, Recaudo {recaudo}")
+        continuar = input("¿Desea ingresar otra recaudación? (si/no): ")
+        if continuar != 's':
+            break
+
         
 def mostrar_menu():
     while True:
