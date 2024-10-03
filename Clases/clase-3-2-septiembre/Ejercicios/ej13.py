@@ -1,15 +1,27 @@
 #Alumno: Terrile Mateo
 #División 111
 #13
-# Especializar las funciones del punto 1, 2 y 3 para hacerlas reutilizables. Agregar validaciones.
+# Especializar las funciones del punto 10, 11 y 12 para hacerlas reutilizables. Agregar validaciones.
 
-def pedir_valores():
-    while type(valor_entero) != int:
-        print("Error, ingrese un valor entero")
+#def solicitar_valores():
     
+# def pedir_numero():
+#     numero = int(input("Ingrese un numero: "))    
+#     return numero
 
-valor_entero = input("Ingrese un numero entero: ")
-valor_entero = int(valor_entero)
-valor_flotante = float(input("Ingrese un valor flotante: "))
-valor_cadena = input("Ingrese")
-resultado = pedir_valores()
+# resultado = pedir_numero()
+# print(f"El numero es: {resultado}")
+
+# def pedir_numero():
+#     numero = float(input("Ingrese un numero: "))    
+#     return numero
+
+# resultado = pedir_numero()
+# print(f"El numero es: {resultado}")
+
+# def pedir_cadena():
+#     cadena = input("Ingrese una cadena: ")    
+#     return cadena
+
+# resultado = pedir_cadena()
+# print(f"La cadena es: {resultado}")
