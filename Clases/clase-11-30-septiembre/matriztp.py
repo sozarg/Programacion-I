@@ -4,6 +4,12 @@ matriz_legajos_choferes = [
     [31, 32, 33, 34, 35]
 ]
 
+matriz_recaudaciones = [
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0]
+]
+
 def ingresar_legajo():
     legajo = int(input("Chofer, ingrese su numero de legajo: "))
     return legajo
@@ -20,7 +26,8 @@ def validacion_linea():
         if linea >= 1 and linea <= 3:
             return linea
         else:
-            print("Chofer, la linea debe ser del 1 al 3")
+            print("Chofer, las lineas son: 1/2/3")
+
 def validacion_coche():
     while True:
         coche = int(input("Chofer, ingrese el numero de coche: "))
@@ -42,17 +49,50 @@ def cargar_planilla():
     if not validacion_legajo(legajo, matriz_legajos_choferes):
         print("Chofer, su legajo no es valido")
         return
+
     while True:
         linea = validacion_linea()
         coche = validacion_coche()
         recaudo = validacion_recaudo()
         
+        matriz_recaudaciones[linea-1][coche-1] += recaudo
+
         print(f"Recaudación registrada: Línea {linea}, Coche {coche}, Recaudo {recaudo}")
-        continuar = input("¿Desea ingresar otra recaudación? (si/no): ")
-        if continuar != 's':
+        continuar = input("Chofer, quiere ingresar otra recaudacion? (si/no): ")
+
+        if continuar != 'si':
             break
 
+def mostrar_recaudacion_por_coche_y_linea():
+    print("\nRecaudaciones por coche y línea:")
+    for i in range(len(matriz_recaudaciones)): #fila
+        for j in range(len(matriz_recaudaciones[i])): #columna
+            print(f"Línea {i+1}, Coche {j+1}: {matriz_recaudaciones[i][j]}", end="\t")
+        print()
         
+def mostrar_recaudacion_por_linea():
+    print("\nRecaudación total por línea:")
+    for i in range(len(matriz_recaudaciones)): #fila
+        total_linea = 0
+        for j in range(len(matriz_recaudaciones[i])): #columna
+            total_linea += matriz_recaudaciones[i][j]
+        print(f"Línea {i+1}: {total_linea}")
+
+def mostrar_recaudacion_por_coche():
+    print("\nRecaudación total por coche:")
+    for j in range(len(matriz_recaudaciones[0])): #columna
+        total_coche = 0
+        for i in range(len(matriz_recaudaciones)): #fila
+            total_coche += matriz_recaudaciones[i][j]
+        print(f"Coche {j+1}: {total_coche}")
+        
+def mostrar_recaudacion_total():
+    total = 0
+    for i in range(len(matriz_recaudaciones)):  #fila
+        for j in range(len(matriz_recaudaciones[i])):  #columna
+            total += matriz_recaudaciones[i][j]
+    print(f"\nRecaudación total: {total}")
+    
 def mostrar_menu():
     while True:
         print("\nMenú:")
@@ -63,7 +103,7 @@ def mostrar_menu():
         print("5. Calcular y mostrar recaudación total")
         print("6. Salir")
         
-        opcion = input("Elige una opción: ")
+        opcion = input("Chofer, elija una opcion: ")
         
         match opcion:
             case '1':
@@ -77,9 +117,9 @@ def mostrar_menu():
             case '5':
                 mostrar_recaudacion_total()
             case '6':
-                print("Saliendo del programa...")
+                print("Chofer, usted eligió salir del programa")
                 break
             case _:
-                print("Opción no válida, intenta nuevamente.")
+                print("Chofer, esa opcion no es valida")
 
 mostrar_menu()
