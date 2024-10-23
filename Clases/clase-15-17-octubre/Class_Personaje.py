@@ -18,3 +18,21 @@ class Personaje:
         string_formato += "*"*50
         
         return string_formato
+    
+    def volar(self, altura, velocidad):
+        if self.puede_volar:
+            print(f"Soy {self.nombre_personaje} y estoy volando a una altura de {altura} mts, a una velocidad de: {velocidad}km/h")
+        else:
+            print(f"{self.nombre_personaje} No puede volar")
+    
+    def atacar(self, otro_personaje: "Personaje"):
+        if self.poder_pelea > otro_personaje.poder_pelea:
+            print(f"GANO: {self.nombre_personaje}")
+            self.poder_pelea -= otro_personaje.poder_pelea
+            otro_personaje.poder_pelea = 0
+        elif self.poder_pelea < otro_personaje.poder_pelea:
+            print(f"GANO {otro_personaje.nombre_personaje}")
+            otro_personaje.poder_pelea -= self.poder_pelea
+            self.poder_pelea = 0
+        else:
+            print("Hubo empate")

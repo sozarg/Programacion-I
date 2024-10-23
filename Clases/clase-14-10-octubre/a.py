@@ -5,4 +5,4 @@ def crear_matriz(cantidad_filas:int, cantidad_columnas:int, valor_inicial: any) 
         matriz += [fila]
     return matriz
 
-def validar_valorr(valor:int,, minimo macximo)
+#def validar_valorr(valor:int, minimo maximo)
