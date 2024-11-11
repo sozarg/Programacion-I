@@ -17,4 +17,4 @@ def my_slicing(cadena: str, inicio: int, fin: int) -> str:
         print(cadena[i], end = "")
 cadena = "hola comision 111"
 
-my_slicing(cadena, 5,12)
+my_slicing(cadena, 2,12)
