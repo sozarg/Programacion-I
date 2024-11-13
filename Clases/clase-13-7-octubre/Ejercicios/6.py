@@ -2,15 +2,19 @@
 #6
 #Crear una función para contar cuántas veces aparece una subcadena dentro de una cadena.
 
-cadena = "El pan del panadero"
-subcadena = "pan"
+ejemplo="El pan del panadero"
 
-def contador_subcadenas(cadena:str, subcadena:str) -> int:
-    contador = 0
-    for caracter in cadena:
-        if subcadena in cadena:
-            contador +=1
+def contar_subcadena(cadena:str, sub_cadena:str)->int | None:
+    # palabras= cadena.lower() #Otra manera
+    sub_palabras = sub_cadena.lower() #Esta linea se mantiene en otra manera
+    palabras= cadena.lower().split(" ")
+    contador=0
+    for i in palabras:
+        if sub_cadena in i:
+            contador+=1
+
+    # return palabras.count(sub_palabras) #Otra manera
     return contador
 
-resultado = contador_subcadenas(cadena,subcadena)
-print(resultado)
+a=contar_subcadena(ejemplo, "pan")
+print(a)
